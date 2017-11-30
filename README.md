@@ -1,4 +1,4 @@
-# yocto-base
+# docker-yocto-dev
 
 Dockertized yocto build system
 
