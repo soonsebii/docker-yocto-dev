@@ -17,6 +17,9 @@ RUN sed -i "s^http://archive.ubuntu.com/ubuntu^${MIRROR_URL}^g" /etc/apt/sources
 && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales \
 && rm -rf /var/lib/apt/lists/*
 
+# Set the locale
+ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
+
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 

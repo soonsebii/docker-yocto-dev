@@ -31,3 +31,10 @@ Step3. Enjoy!
 ```bash
 docker exec -it build-test /bin/bash
 ```
+
+# Workaround
+### Do not use bitbake as root
+```bash
+touch conf/sanity.conf
+```
+
