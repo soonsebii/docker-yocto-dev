@@ -6,8 +6,8 @@ DEBUG="${DEBUG:-false}"
 #
 # git
 #
-GIT_CONFIG_NAME="${GIT_CONFIG_NAME:-worker}"
-GIT_CONFIG_EMAIL="${GIT_CONFIG_EMAIL:-worker@workhard.com}"
+GIT_CONFIG_NAME="${GIT_CONFIG_NAME:-builder}"
+GIT_CONFIG_EMAIL="${GIT_CONFIG_EMAIL:-builder@workhard.com}"
 
 git config --global user.name "$GIT_CONFIG_NAME"
 git config --global user.email "$GIT_CONFIG_EMAIL"
@@ -25,7 +25,7 @@ REPO_SYNC_JOBS="${REPO_SYNC_JOBS:-4}"
 REPO_SYNC_OPTIONS="${REPO_SYNC_OPTIONS:-}"
 
 if [ "$REPO_ENABLED" = true ]; then
-  mkdir -p "/root/yocto/source" && cd "/root/yocto/source"
+  mkdir -p "${WORKDIR}/yocto/source" && cd "${WORKDIR}/yocto/source"
 
   [[ "$REPO_TRACE" == true ]] && REPO_OPTION="--trace" || REPO_OPTION=""
 
